@@ -1,26 +1,30 @@
 import './Components.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Outlet, Navigate, useNavigate} from 'react-router-dom';
 import { useAuth } from './AuthContext';
 import { supabase } from './supabase';
 import { Stack, Text, Button } from '@chakra-ui/react'
 
 // The Sign In page
 export function SignIn() {
-  return <Body type='Sign In' />;
+  //console.log(supabase.auth.user());
+  if (supabase.auth.user()) {
+    return <Navigate to="/profile" />;
+  }
+  return <Outlet />;
 } 
-
 
 // The Sign Up page
 export function SignUp() {
-  return <Body type='Sign Up'/>;
+  //console.log(supabase.auth.user());
+  if (supabase.auth.user()) {
+    return <Navigate to="/profile" />;
+  }
+  return <Outlet />;
 } 
 
 
 // Content of "Sign Up" and "Sign In" pages
 export const Body = ({ type, loading }) => {
-  // const { currentUser } = useAuth();
-  // console.log(currentUser);
-  const navigate = useNavigate;
   const { handleSignIn, handleSignUp } = useAuth();
 
   async function handleSubmit(e) {
@@ -57,18 +61,18 @@ export const Body = ({ type, loading }) => {
   );
 }
 
-// The App page
 export function Profile() {
   const navigate = useNavigate();
-  
   function handleSignOut() {
     supabase.auth.signOut();
     navigate('/signin');
   }
-  return (
-    <div className='App'>
-      <Button className='btn3' onClick={handleSignOut}>Sign Out</Button>
-    </div>
-  );
+
+  return(
+  <div className='App'>
+    <Button className='btn3' onClick={handleSignOut}>Sign Out</Button>
+  </div>
+  )
 }
+ 
   

@@ -1,7 +1,6 @@
-import { createContext, useContext, useEffect, useState} from "react";
+import { createContext, useContext, useState} from "react";
 import { supabase } from './supabase';
-import { useNavigate } from "react-router";
-import { Stack, Text, Button, useToast } from '@chakra-ui/react';
+import { useToast } from '@chakra-ui/react';
 
 import { Body } from './Components';
 
@@ -12,17 +11,14 @@ export function useAuth() {
 }
 
 export function AuthProvider({children}) {
-  const[currentUser, setUser] = useState(null);
   const[loading, setLoading] = useState(false);
-  const navigate = useNavigate();
   const toast = useToast();
 
   const handleSignIn = async (email,password) => {
     try {
       setLoading(true);
-      const { error , user} = await supabase.auth.signIn({ email, password });
+      const { error } = await supabase.auth.signIn({ email, password });
       if (error) throw error;
-      setUser(user); navigate('/');
       toast({
         title: 'Welcome back!',
         position: 'top',
@@ -39,9 +35,8 @@ export function AuthProvider({children}) {
   const handleSignUp = async (email,password) => {
     try {
       setLoading(true);
-      const { error , user} = await supabase.auth.signIn({ email, password });
+      const { error } = await supabase.auth.signIn({ email, password });
       if (error) throw error;
-      setUser(user); navigate('/');
       toast({
         title: 'Welcome! Your account was created',
         position: 'top',
@@ -66,13 +61,7 @@ export function AuthProvider({children}) {
     isClosable: true });
   }  
 
-  useEffect(()=>{
-    if (supabase.auth.user()) 
-      navigate('/');
-  }, [navigate]);
-
     const value = {
-    currentUser,
     handleSignIn,
     handleSignUp
   };
@@ -84,6 +73,11 @@ export function AuthProvider({children}) {
   ) // 
 }
 
+
+//useEffect(()=>{
+  //  if (supabase.auth.user()) 
+  //    navigate('/');
+  //}, [navigate]);
 
 
 
