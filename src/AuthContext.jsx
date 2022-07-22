@@ -56,7 +56,7 @@ export function AuthProvider({children}) {
     title: 'Error',
     position: 'top',
     description: error.message,
-    status: 'success',
+    status: 'error',
     duration: 5000,
     isClosable: true });
   }  

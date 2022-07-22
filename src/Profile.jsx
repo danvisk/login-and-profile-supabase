@@ -63,7 +63,7 @@ export function Profile({ session }) {
       if(error) throw error;
 
       toast({
-        title: 'Profile update',
+        title: 'Profile updated!',
         position: 'top',
         variant: 'subtle',
         description: '',
