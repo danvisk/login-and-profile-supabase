@@ -1,0 +1,54 @@
+.App {
+  text-align: center;
+  margin-top: 300px; }
+
+.component {
+  margin: 5vh 30px 5vh 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.cont {
+  width: 540px;
+  height: 230px;
+  border: 1px solid lightgrey; 
+  border-radius: 7px;
+  padding: 20px; 
+  padding-bottom: 15px;}
+
+.form-group {
+  display: flex;
+  /*flex-wrap: wrap;*/}
+
+.form-control {
+  margin-right: 5px;}
+
+.email {
+  width: 280px; }
+
+.pass {
+  width: 130px; }
+
+.btn, .btn2 {
+  margin-top: 24px;
+  max-height: 38px;
+  padding-top: 2px;
+  padding-bottom: 2px; }
+
+.btn2 {
+  min-width: 95px; }
+
+.opt {
+  margin-top: 6px; }
+
+.error {
+  margin-top: 10px; 
+  white-space: nowrap; }
+
+.load {
+  text-align: center;
+  margin-top: 50px; }
+
+  .btn3 {
+    color: rgb(95, 95, 95);
+  }
