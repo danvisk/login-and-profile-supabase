@@ -26,6 +26,7 @@ export function AuthProvider({children}) {
         duration: 5000,
         isClosable: true });
     } catch(error) {
+      console.log({ error })
       toastError(error);
     } finally {
       setLoading(false);
@@ -35,12 +36,11 @@ export function AuthProvider({children}) {
   const handleSignUp = async (email,password) => {
     try {
       setLoading(true);
-      const { error } = await supabase.auth.signIn({ email, password });
+      const { error } = await supabase.auth.signUp({ email, password });
       if (error) throw error;
       toast({
         title: 'Welcome! Your account was created',
         position: 'top',
-        description: 'Welcome! Your account was created',
         status: 'success',
         duration: 5000,
         isClosable: true });
