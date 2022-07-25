@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+You can view this project here: https://login-and-profile-supabase.netlify.app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Comments on the why(s) and how(s) of this project will come soon in English. 
 
-## Available Scripts
+<br>
+--- PORTUGUÊS ---
+<br><br>
 
-In the project directory, you can run:
+Os "porquês", "o quê" e "como"(desafios e aprendizados). 🙂
+<br><br>
 
-### `npm start`
+1.Porquê:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Projeto pós-estudo de React, para praticar e fazer parte de meu portfólio.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br>
+<details>
+<summary>2.O quê:(clique para expandir)</summary>
+Projeto feito em React, que utiliza a API do Supabase, versão OpenSource do Firebase, para criar uma tela de login, inscrição (Sign Up) e perfil. Lá já aparece seu email de login e também avatar, nickname/username e website, caso você já tivesse atualizado esses dados antes, ou tudo em branco (menos o email) e com a opção de atualizar, caso você tenha recém feito o cadastro (sign up).
 
-### `npm test`
+Esse projeto utiliza: 
+- React, com Hooks como o useContext para realizar as tarefas de Sign In e Sign Up, lidando com avisos de erros e sucesso em um componente separado, o AuthProvider, que embrulha (wraps) os outros componentes. 
+- React Router, para navegar entre endereços diferentes (/signin, /signup e /profile)
+- Interação com API (base da dados)
+- MóduloChakra UI (https://chakra-ui.com) para estilizar mais fácil e elegantemente com componentes "semi-prontos" (com opções de personalização), trazendo até as mensagens de erro ou sucesso com "toasts". <details>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Só dar uma olhada no site, que foi hospedado no Netlify, e o link, já mostrado acima, está repetido aqui:
 
-### `npm run build`
+https://login-and-profile-supabase.netlify.app
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+COMO USAR: você vai ver uma tela de login/sign in, onde tem a opção "Sign up instead", clica em cima dessa frase, e daí você pode criar uma conta nova. Pde usar qualquer e-mail, que nem precisa existir, e uma senha com no mínimo 6 caracteres. Só preencher os dados, clicar Enter ou o botão Sign Up, e será imediatamente levado a tela de perfil, onde mostra o e-mail utilizado e os outros dados precisam ser carregados ou atualizados.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Para ilustrar:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![The Profile page](https://i.imgur.com/8AcaXlz.png)
 
-### `npm run eject`
+Dá para ver que, neste exemplo, ainda falta atualizar o nome de usuário (username). :fire: </details>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<br>
+3.Como (desafios e aprendizados):
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+... Melhor forma: me pergunte, vou lembrar bem, mesmo anos depois de ter publicado esse repositório. :relieved:
